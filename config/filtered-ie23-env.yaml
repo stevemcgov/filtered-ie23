@@ -10,3 +10,4 @@ dependencies:
  - pydocstyle
  - matplotlib
  - scipy
+ - pip
