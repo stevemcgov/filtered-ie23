@@ -1,2 +1,4 @@
 micromambaenv/
 *.jpg
+__pycache__/
+*.egg-info
