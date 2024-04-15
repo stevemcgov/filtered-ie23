@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+authors = [
+  {name = "Stephen McGovern", email = "svenmcgov@protonmail.com"}
+]
+name = "filtered_ie23_pkg"
+version = "1.0"
+description = "Python code base for publication #####."
+
+[tool.setuptools]
+packages = ["filtered_ie23_pkg", "filtered_ie23_pkg.methods", "filtered_ie23_pkg.ODEs"]
+
+[tool.black]
+line-length = 88
+
+[tool.pytest.ini_options]
+markers = [
+  "unit",
+  "integration",
+]
