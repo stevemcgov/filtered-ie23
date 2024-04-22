@@ -1,6 +1,32 @@
 """IE-Pre-Post-3 constant step method."""
 
 
+def ie_pre_2(f_ode, x_range, y_init, num_steps):
+    """IE-Pre-2 Implementation."""
+    import numpy as np
+    from scipy.optimize import fsolve
+
+    x = np.zeros(num_steps + 1)
+    y = np.zeros((num_steps + 1, np.size(y_init)))
+    h = (x_range[1] - x_range[0]) / num_steps
+
+    for k in range(0, num_steps + 1):
+        if k == 0:
+            x[0] = x_range[0]
+            y[k, :] = y_init
+        else:
+            x[k] = x[k - 1] + h
+            if k < 3:
+                y[k, :] = fsolve(
+                    _ier, y[k, :], args=(f_ode, x[k - 1], y[k - 1, :], x[k])
+                )
+            else:
+                temp_ykm1 = _ie_pre_filter_2(y[k - 1, :], y[k - 2, :], y[k - 3, :])
+                y[k, :] = fsolve(_ier, y[k, :], args=(f_ode, x[k - 1], temp_ykm1, x[k]))
+
+    return x, y
+
+
 def ie_pre_post_3(f_ode, t_range, y_init, num_steps):
     """3rd Order Filtered Implicit method using RK3 to start.
 

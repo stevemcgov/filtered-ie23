@@ -6,12 +6,12 @@ build-backend = "setuptools.build_meta"
 authors = [
   {name = "Stephen McGovern", email = "svenmcgov@protonmail.com"}
 ]
-name = "filtered_ie23_pkg"
+name = "filtered_ie23_py"
 version = "1.0"
 description = "Python code base for publication #####."
 
 [tool.setuptools]
-packages = ["filtered_ie23_pkg", "filtered_ie23_pkg.methods", "filtered_ie23_pkg.ODEs"]
+packages = ["filtered_ie23_py", "filtered_ie23_py.methods", "filtered_ie23_py.ODEs"]
 
 [tool.black]
 line-length = 88
