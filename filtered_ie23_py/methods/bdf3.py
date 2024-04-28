@@ -1,5 +1,6 @@
 """Standard BDF3 implementations."""
 
+
 def bdf3(f, tspan, y0, n):
     """BDF3 with IE and BDF2 buildup steps."""
     from scipy.optimize import fsolve

@@ -1,6 +1,8 @@
 micromambaenv/
 *.jpg
+*.txt
 __pycache__/
 *.egg-info
 build/
 .DS_Store
+*_old.py
