@@ -1,3 +1,5 @@
+"""Run Filtered-IE23 on Model ODE Analog."""
+
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -11,7 +13,7 @@ from filtered_ie23_py import (
 t_range = [0.0, 10.0]
 y_init = 1.0
 num_steps = [100, 1000, 10000, 100000]
-max_steps = 1000000
+max_steps = 100000
 
 # dts = [0.001,  0.0001, 0.00005]  # good for lambda = 5, OK for lambda = 5.7
 # tols = [0.001, 0.0005, 0.00025] # good for lambda = 5, OK for lambda = 5.7
@@ -32,8 +34,8 @@ for lam in lams:
         print(f"\nSettings: lambda = {lam}, dt = {dt}, tol = {tol}")
         print(f"Number of steps taken: {len(t_filtered_ie23) - 1}")
         print(
-            "Error at final step: " +
-            f"{abs(y_filtered_ie23[-1, :][0] - test_ode_analog_sol(t_range[1])):.5E}"
+            "Error at final step: "
+            + f"{abs(y_filtered_ie23[-1, :][0] - test_ode_analog_sol(t_range[1])):.5E}"
         )
         x = np.linspace(0.0, 10.0, 1001)
         y = test_ode_analog_sol(x)
