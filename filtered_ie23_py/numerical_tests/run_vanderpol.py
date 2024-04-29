@@ -1,3 +1,4 @@
+"""Run Filtered-IE23 on van der pol."""
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -30,8 +31,8 @@ for mu, t_range in zip(mus, t_ranges):
     )
     plt.plot(t_filtered_ie23, y_filtered_ie23[:, 0], "b-", linewidth=1.5)
     plt.grid(True)
-    plt.ylabel('x axis')
-    plt.xlabel('t axis')
+    plt.ylabel("x axis")
+    plt.xlabel("t axis")
     plt.savefig(f"plots/vanderpol_filtered_ie23_mu_{mu}.jpg")
     # plt.show()
     plt.close()
