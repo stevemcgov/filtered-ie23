@@ -35,5 +35,5 @@ for mu, t_range in zip(mus, t_ranges):
     plt.ylabel("x axis")
     plt.xlabel("t axis")
     plt.savefig(f"plots/vanderpol_filtered_ie23_mu_{mu}.jpg")
-    # plt.show()
+    plt.show()
     plt.close()

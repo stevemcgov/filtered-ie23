@@ -1,8 +1,5 @@
 """Run Filtered-IE23 on Model ODE."""
 
-import numpy as np
-import matplotlib.pyplot as plt
-
 from filtered_ie23_py import (
     filtered_ie23,
     ie_pre_post_3,
@@ -24,12 +21,14 @@ for dt, tol in zip(dts, tols):
     )
     print(f"\nNumber of steps taken: {len(t_filtered_ie23) - 1}")
     print(
-        f"Error at final step:{abs( y_filtered_ie23[-1,:][0] - test_ode_sol(t_range[1] ) ):.5E}"
+        "Error at final step:"
+        + f"{abs(y_filtered_ie23[-1, :][0] - test_ode_sol(t_range[1])):.5E}"
     )
 
 for num_step in num_steps:
     t_prepost3, y_prepost3 = ie_pre_post_3(test_ode, t_range, y_init, num_step)
     print(f"\nNumber of steps taken: {num_step}")
     print(
-        f"Error at final step:{abs( y_prepost3[-1,:][0] - test_ode_sol(t_range[1] ) ):.5E}"
+        "Error at final step:"
+        + f"{abs(y_prepost3[-1, :][0] - test_ode_sol(t_range[1])):.5E}"
     )
