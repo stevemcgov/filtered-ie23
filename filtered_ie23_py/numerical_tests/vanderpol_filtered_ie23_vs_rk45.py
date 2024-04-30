@@ -1,4 +1,5 @@
 """Filtered-IE23 vs RK45 on van der Pol."""
+
 import numpy as np
 import matplotlib.pyplot as plt
 
