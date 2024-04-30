@@ -1,5 +1,7 @@
 # Filtered-IE23
-Filtered-IE23 is an adaptive, filtered Implicit Euler method which uses a 2nd/3rd order embedded pair. This guide uses micromamba (https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html) for the build. It will need to be installed on the target system before following the setup instructions below. If the user prefers conda, the environment yaml file should be compatible.
+Filtered-IE23 is an adaptive, filtered method based on Implicit Euler. It uses a 2nd/3rd order embedded pair for the variable step. This guide uses micromamba (https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html) for the build. It will need to be installed on the target system before following the setup instructions below.
+
+If the user prefers conda, the environment yaml file should be compatible. However, the `install_env.sh` script is specific to micromamba.
 
 ## Create the Micromamba Environment
 ```
