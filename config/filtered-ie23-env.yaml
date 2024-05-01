@@ -10,4 +10,5 @@ dependencies:
  - pydocstyle
  - matplotlib
  - scipy
+ - pytest
  - pip
