@@ -2,9 +2,7 @@
 
 
 def filtered_ie23(f_ode, t_range, y_init, dt, TOL, max_steps):
-    """
-    RK3 until there are enough steps for adaptive filter.
-    """
+    """RK3 until there are enough steps for adaptive filter."""
     import numpy as np
     from scipy.optimize import fsolve
 
