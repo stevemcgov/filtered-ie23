@@ -1,7 +1,10 @@
+"""van der Pol DE."""
+
 import numpy as np
 
 
 def set_mu(mu_input=None):
+    """Set damping."""
     if not hasattr(set_mu, "mu_default"):
         set_mu.mu_default = 1.0
 
@@ -14,6 +17,7 @@ def set_mu(mu_input=None):
 
 
 def vanderpol_deriv(t, y):
+    """Return van der Pol derivative."""
     MU = set_mu()
     u = y[0]
     v = y[1]

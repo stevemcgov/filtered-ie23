@@ -1,3 +1,5 @@
+"""__init__ for package filtered_ie23_py."""
+
 # flake8: noqa
 from .methods.ie_pre_post_3 import ie_pre_post_3, ie_pre_2
 from .methods.filtered_ie23 import filtered_ie23

@@ -4,6 +4,7 @@ import numpy as np
 
 
 def quasi_periodic_ode(t, y):
+    """Quasi-periodic ODE."""
     y1 = y[1]
     y2 = y[2]
     y3 = y[3]
@@ -13,4 +14,5 @@ def quasi_periodic_ode(t, y):
 
 
 def quasi_periodic_ode_sol(t):
+    """Quasi-periodic ODE Solution."""
     return np.cos(t) + np.cos(np.pi * t)
