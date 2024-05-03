@@ -18,3 +18,13 @@ micromamba activate ./micromambaenv
 pip install .
 ```
 
+## Run Numerical Tests
+The numerical tests can be found in filtered_ie23_py/numerical_tests. Run with
+```
+python run_{TEST_NAME_HERE}
+```
+
+## Run the format tests
+```
+pytest test -v
+```
