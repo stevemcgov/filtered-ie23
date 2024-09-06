@@ -15,6 +15,7 @@ max_steps = 1000000
 dts = [0.01, 0.001, 0.005, 0.0005]
 tols = [0.001, 0.0001, 0.00025, 0.00025]
 
+print("\n\nBegin Adaptive Method Filtered-IE23:\n")
 for dt, tol in zip(dts, tols):
     t_filtered_ie23, y_filtered_ie23, e = filtered_ie23(
         test_ode, t_range, y_init, dt, tol, max_steps
@@ -24,7 +25,7 @@ for dt, tol in zip(dts, tols):
         "Error at final step:"
         + f"{abs(y_filtered_ie23[-1, :][0] - test_ode_sol(t_range[1])):.5E}"
     )
-
+print("\n\nBegin Constant Step Method IE-Pre-Post-3:\n")
 for num_step in num_steps:
     t_prepost3, y_prepost3 = ie_pre_post_3(test_ode, t_range, y_init, num_step)
     print(f"\nNumber of steps taken: {num_step}")
