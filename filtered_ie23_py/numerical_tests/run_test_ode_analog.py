@@ -44,5 +44,5 @@ for lam in lams:
         plt.grid(True)
         plt.ylabel("y axis")
         plt.xlabel("t axis")
-        plt.savefig(f"filtered_ie23_lambda{lam}_dt{dt}_tol{tol}.jpg")
+        plt.savefig(f"plots/filtered_ie23_lambda{lam}_dt{dt}_tol{tol}.jpg")
         plt.close()
