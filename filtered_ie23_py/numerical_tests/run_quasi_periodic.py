@@ -31,15 +31,15 @@ for num_step in num_steps:
     plt.plot(t_ie_pre_post_3, y_ie_pre_post_3[:, 0], "r-", label="constant, 3rd order")
     t_ie_pre_2, y_ie_pre_2 = ie_pre_2(quasi_periodic_ode, t_range, y_init, num_step)
     plt.plot(t_ie_pre_2, y_ie_pre_2[:, 0], "g-", label="constant, 2nd order")
-    
+
     t_filtered_ie23, y_filtered_ie23, e = filtered_ie23(
         quasi_periodic_ode, t_range, y_init, dt, tol, max_steps
     )
     plt.plot(t_filtered_ie23, y_filtered_ie23[:, 0], "b-", label="adaptive")
-    plt.legend(mode='expand')
+    plt.legend(mode="expand")
     plt.ylabel("x axis")
     plt.xlabel("t axis")
     plt.legend(loc="lower right")
-    plt.savefig(f"quasi_periodic_k_{t_range[1]/num_step}.jpg")
+    plt.savefig(f"plots/quasi_periodic_k_{t_range[1]/num_step}.jpg")
     plt.show()
     plt.close()
