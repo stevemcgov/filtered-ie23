@@ -10,7 +10,7 @@ from filtered_ie23_py import (
 t_range = [0.0, 2.0]
 y_init = 1.0
 num_steps = [200, 400, 2000]
-max_steps = 1000000
+max_steps = 2000
 
 dts = [0.01, 0.001, 0.005, 0.0005]
 tols = [0.001, 0.0001, 0.00025, 0.00025]

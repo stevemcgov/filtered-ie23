@@ -92,8 +92,8 @@ def filtered_ie23(f_ode, t_range, y_init, dt, TOL, max_steps):
         knm3 = t[k - 2] - t[k - 3]
 
         # test
-        if k > max_steps:
-            print("Reached maximum number of allowable steps.")
+        if k >= max_steps:
+            print("\n\nReached maximum number of allowable steps.")
             break
 
     return t, y, e

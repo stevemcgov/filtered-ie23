@@ -8,7 +8,8 @@ authors = [
 ]
 name = "filtered_ie23_py"
 version = "1.0"
-description = "Python code base for publication #####."
+description = "Python codebase for publication ##########."
+license = {file = "LICENSE"}
 
 [tool.setuptools]
 packages = ["filtered_ie23_py", "filtered_ie23_py.methods", "filtered_ie23_py.ODEs"]
