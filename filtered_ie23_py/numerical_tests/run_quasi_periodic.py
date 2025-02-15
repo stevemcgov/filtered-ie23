@@ -14,10 +14,10 @@ from filtered_ie23_py import (
 t_range = [0, 20.0]
 y_init = np.array([2.0, 0.0, -(1 + np.pi**2), 0.0])
 
-dt = 0.1
+dt = 0.01
 tol = 0.0075
 max_steps = 1000000
-num_steps = [200, 400, 800]
+num_steps = [200, 400, 2000]
 
 for num_step in num_steps:
     x = np.linspace(0.0, 20.0, 1001)
@@ -34,6 +34,17 @@ for num_step in num_steps:
 
     t_filtered_ie23, y_filtered_ie23, e = filtered_ie23(
         quasi_periodic_ode, t_range, y_init, dt, tol, max_steps
+    )
+    print(f"\nNumber of steps taken by Filtered-IE23: {len(t_filtered_ie23) - 1}")
+    print(
+        "Error at final step:"
+        + f"{abs(y_filtered_ie23[-1, :][0] - quasi_periodic_ode_sol(t_range[1])):.5E}"
+    )
+
+    print(f"\nNumber of steps taken: {len(t_ie_pre_post_3)}")
+    print(
+        "Error at final step:"
+        + f"{abs(y_ie_pre_post_3[-1, :][0] - quasi_periodic_ode_sol(t_range[1])):.5E}"
     )
     plt.plot(t_filtered_ie23, y_filtered_ie23[:, 0], "b-", label="adaptive")
     plt.legend(mode="expand")

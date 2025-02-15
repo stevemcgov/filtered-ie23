@@ -38,8 +38,7 @@ for mu, t_range in zip(mus, t_ranges):
     t = np.linspace(t_range[0], t_range[1], 10000)
     sol = solve_ivp(vanderpol_deriv, t_range, y_init, t_eval=t)
     plt.plot(t, sol.y[0], "r-")
-    # t_bdf2, y_bdf2 = bdf2(vanderpol_deriv, t_range, y_init, num_step)
-    # plt.plot(t_bdf2, y_bdf2[:, 0], "r-")
+
     t_filtered_ie23, y_filtered_ie23, e = filtered_ie23(
         vanderpol_deriv, t_range, y_init, dt, tol, max_steps
     )
